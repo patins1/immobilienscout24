@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+         
+      <view
+            class="com.kiegeland.immobilienscout24.views.AllStockGainsView"
+            id="immo.views.AllStockGainsView"
+            name="Immo"
+            restorable="true">
+      </view>
+      
+      <view
+            class="com.kiegeland.immobilienscout24.views.ControlView"
+            id="immo.views.ControlView"
+            name="Control Panel">
+      </view>
+      
+      <view
+            class="com.kiegeland.immobilienscout24.views.WebView"
+            id="immo.views.WebView"
+            name="Web View">
+      </view>
+      
+   </extension>
+   <extension
+         id="ImmoProductID"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="Immo.id1"
+            name="ImmoProductName">
+         <property
+               name="appName"
+               value="ImmoProductName">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.kiegeland.immobilienscout24.PerspectiveFactory1"
+            id="immo.perspective1"
+            name="Immobilien Perspective">
+      </perspective>
+   </extension>
+
+   <extension
+         id="id1"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="com.kiegeland.immobilienscout24.Application">
+         </run>
+      </application>
+   </extension>
+   
+</plugin>
